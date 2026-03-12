@@ -1,0 +1,12 @@
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>Vector Search Demo — semantic search with Lucene and pre-computed embeddings</description>
+    <author>eXist-db</author>
+    <website>https://exist-db.org</website>
+    <status>stable</status>
+    <license>LGPL-2.1-or-later</license>
+    <copyright>true</copyright>
+    <type>application</type>
+    <target>vector-demo</target>
+    <prepare>pre-install.xq</prepare>
+    <finish>post-install.xq</finish>
+</meta>

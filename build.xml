@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="vector-demo" default="package" basedir=".">
+    <property name="app.name" value="vector-demo"/>
+    <property name="app.version" value="1.0.0"/>
+    <property name="build.dir" value="build"/>
+    <property name="xar.dir" value="${build.dir}/xar"/>
+    <property name="xar.file" value="${build.dir}/${app.name}-${app.version}.xar"/>
+
+    <target name="clean" description="Remove build output">
+        <delete dir="${build.dir}" failonerror="false"/>
+    </target>
+
+    <target name="init" depends="clean" description="Create build directories">
+        <mkdir dir="${xar.dir}"/>
+    </target>
+
+    <target name="copy-descriptor" depends="init" description="Copy package descriptors and install scripts to xar root">
+        <copy file="expath-pkg.xml" todir="${xar.dir}"/>
+        <copy file="repo.xml" todir="${xar.dir}"/>
+        <copy file="pre-install.xq" todir="${xar.dir}"/>
+        <copy file="post-install.xq" todir="${xar.dir}"/>
+        <copy file="README.md" todir="${xar.dir}" failonerror="false"/>
+        <copy file="LICENSE" todir="${xar.dir}" failonerror="false"/>
+    </target>
+
+    <target name="copy-resources" depends="copy-descriptor" description="Copy app resources into xar">
+        <copy file="controller.xql" todir="${xar.dir}"/>
+        <copy file="index.html" todir="${xar.dir}"/>
+        <copy file="search.xq" todir="${xar.dir}"/>
+        <copy file="collection.xconf" todir="${xar.dir}"/>
+        <copy file="data/articles.xml" todir="${xar.dir}/data"/>
+    </target>
+
+    <target name="package" depends="copy-resources" description="Build the .xar package">
+        <zip destfile="${xar.file}" basedir="${xar.dir}" update="false"/>
+        <echo message="Built ${xar.file}"/>
+    </target>
+</project>
