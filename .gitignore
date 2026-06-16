@@ -24,5 +24,8 @@ hs_err_pid*
 replay_pid*
 
 .cursor/
-.vscode/
+node_modules/
+_site/
+workshop-slides/workshop-slides.html
+.moderne/
 build/
