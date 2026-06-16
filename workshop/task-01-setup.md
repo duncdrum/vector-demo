@@ -2,9 +2,9 @@
 
 **Objective:** Create a collection, configure a Lucene vector index, and store test data.
 
-### Step 1: Create the config collection
+### Step 1: Create the workshop collection
 
-Create a `db/workshop` collection in eXide:
+Create `/db/workshop` in eXide:
 
 ```xquery
 xquery version "3.1";
@@ -16,7 +16,8 @@ xmldb:create-collection("/db", "workshop")
 
 ### Step 2: Store collection.xconf
 
-Create a `collection.xconf` via eXide:
+In eXide, create `collection.xconf` in `/db/workshop` and paste:
+
 ```xml
 <collection xmlns="http://exist-db.org/collection-config/1.0">
     <index xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -34,9 +35,12 @@ Create a `collection.xconf` via eXide:
 </collection>
 ```
 
+Save the file in the collection. eXide automatically syncs it to the system config path (`/db/system/config/db/workshop`) — you do not need to store it there manually.
+
 ### Step 3: Store test data
 
-Store `data.xml`
+In eXide, create `data.xml` in `/db/workshop`:
+
 ```xml
 <articles>
     <article>

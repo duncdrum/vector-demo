@@ -4,10 +4,11 @@
   "description": "XML Prague workshop: semantic search with eXist-db 7",
   "scripts": {
     "slides:merge": "node scripts/merge-slides.js",
+    "slides:check": "node scripts/merge-slides.js && git diff --exit-code workshop-slides/workshop-slides.md",
     "slides": "marp --no-stdin --html --allow-local-files workshop-slides/workshop-slides.md -o _site/slides/index.html",
     "site": "node scripts/build-site.js",
     "build": "npm run slides:merge && npm run site && npm run slides",
-    "slides:preview": "npm run slides:merge && marp --no-stdin --html --allow-local-files -s workshop-slides/workshop-slides.md"
+    "slides:preview": "npm run slides:merge && PORT=9080 marp --no-stdin --html --allow-local-files -sw -I workshop-slides workshop-slides/workshop-slides.md"
   },
   "devDependencies": {
     "@marp-team/marp-cli": "4.1.2"

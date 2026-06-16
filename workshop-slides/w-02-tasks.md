@@ -11,6 +11,8 @@ xmldb:create-collection("/db", "workshop")
 
 ### Task 1b: Store collection.xconf
 
+In eXide, create `collection.xconf` in `/db/workshop` and paste:
+
 ```xml
 <collection xmlns="http://exist-db.org/collection-config/1.0">
     <index xmlns:xs="http://www.w3.org/2001/XMLSchema">
@@ -28,9 +30,13 @@ xmldb:create-collection("/db", "workshop")
 </collection>
 ```
 
+Save in place — eXide copies the config to `/db/system/config/db/workshop` automatically.
+
 ---
 
 ### Task 1c: Store test data
+
+In eXide, create `data.xml` in `/db/workshop`:
 
 ```xml
 <articles>
@@ -160,7 +166,7 @@ return
 
 ---
 
-### Task 3d: Compare results
+### Task 3c: Compare results
 
 | Query `[1,0,0,0]` | Cosine order | Euclidean order |
 |---------------|-------------|----------------|
@@ -279,6 +285,8 @@ vector:embed("semantic search", "all-MiniLM-L6-v2")
 
 Expected: `all-MiniLM-L6-v2` among models.
 
+If empty: confirm image `duncdrum/existdb:experimental` and restart the container.
+
 ---
 
 ### Task 5b: Index-time embedding config
@@ -303,7 +311,7 @@ Store 4 documents (`Hello world`, `Machine learning`, `Quantum physics`, `Climat
 
 ---
 
-### Task 5d: Semantic search
+### Task 5c: Semantic search
 
 ```xquery
 let $query := "artificial neural networks"
@@ -321,7 +329,7 @@ return
 
 ---
 
-### Task 5e: Try different queries
+### Task 5d: Try different queries
 
 | Query | Expected top result |
 |-------|-------------------|
@@ -331,7 +339,7 @@ return
 
 ---
 
-### Task 5f: Batch embedding
+### Task 5e: Batch embedding
 
 ```xquery
 let $batch := vector:embed-batch(

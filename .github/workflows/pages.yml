@@ -24,6 +24,7 @@ jobs:
           node-version: lts/*
           cache: npm
       - run: npm ci
+      - run: npm run slides:check
       - run: npm run build
       - uses: actions/upload-pages-artifact@v5
         with:

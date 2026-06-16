@@ -1,5 +1,7 @@
 ## Solution 1: Setup Collection with Vector Index
 
+The script below stores config under `/db/system/config/db/workshop` directly. In eXide you can instead save `collection.xconf` in `/db/workshop` — eXide syncs to the system config path on save.
+
 All steps combined in one script:
 
 ```xquery

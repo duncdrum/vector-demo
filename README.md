@@ -19,7 +19,11 @@ docker run -d --name exist-semantic \
     duncdrum/existdb:experimental
 ```
 
+If the container name already exists: `docker rm -f exist-semantic` first.
+
 Open **eXide** at http://localhost:8080/exist/apps/eXide/index.html
+
+For Task 1, save `collection.xconf` in the collection via eXide — it syncs to the system config path on save.
 
 ## Workshop tasks
 
@@ -50,14 +54,15 @@ Edit the fragments, then merge and build:
 ```bash
 npm install
 npm run slides:merge   # writes workshop-slides/workshop-slides.md
+npm run slides:check   # fail if merged file is out of date
 npm run build          # site + slides → _site/
-npm run slides:preview # local preview server
+npm run slides:preview # Marp preview at http://127.0.0.1:9080 (not 8080 — eXist uses that)
 ```
 
 The workshop command used at XML Prague:
 
 ```bash
-npx @marp-team/marp-cli@latest --html --allow-local-files workshop-slides/workshop-slides.md -o workshop-slides/workshop-slides.html
+npx @marp-team/marp-cli@4.1.2 --no-stdin --html --allow-local-files workshop-slides/workshop-slides.md -o workshop-slides/workshop-slides.html
 ```
 
 ## GitHub Pages

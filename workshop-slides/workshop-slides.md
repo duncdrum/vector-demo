@@ -23,6 +23,8 @@ style: |
 
 ## Workshop: Semantic Search with eXist-db 7
 
+**XML Prague 2026.06.04 eXist-db Users Meetup and Workshop**
+
 Hands-on exercises with vector KNN, embedding, and Lucene 10
 
 **Image:** `duncdrum/existdb:experimental`
@@ -39,6 +41,8 @@ docker run -d --name exist-semantic \
     duncdrum/existdb:experimental
 ```
 
+If the container name already exists: `docker rm -f exist-semantic` first.
+
 Open **eXide** at http://localhost:8080/exist/apps/eXide/index.html
 
 ---
@@ -53,7 +57,10 @@ import module namespace vector="http://exist-db.org/xquery/vector";
 
 - `ft:score($hit) descending` for relevance ranking
 - `vector:models()` to check ONNX model availability
+- Save `collection.xconf` in the collection via eXide — it syncs to the system config path on save
 - Solutions in `workshop/solutions/`
+---
+
 ### Task 1a: Create collection
 
 ```xquery
@@ -66,6 +73,8 @@ xmldb:create-collection("/db", "workshop")
 ---
 
 ### Task 1b: Store collection.xconf
+
+In eXide, create `collection.xconf` in `/db/workshop` and paste:
 
 ```xml
 <collection xmlns="http://exist-db.org/collection-config/1.0">
@@ -84,9 +93,13 @@ xmldb:create-collection("/db", "workshop")
 </collection>
 ```
 
+Save in place — eXide copies the config to `/db/system/config/db/workshop` automatically.
+
 ---
 
 ### Task 1c: Store test data
+
+In eXide, create `data.xml` in `/db/workshop`:
 
 ```xml
 <articles>
@@ -216,7 +229,7 @@ return
 
 ---
 
-### Task 3d: Compare results
+### Task 3c: Compare results
 
 | Query `[1,0,0,0]` | Cosine order | Euclidean order |
 |---------------|-------------|----------------|
@@ -335,6 +348,8 @@ vector:embed("semantic search", "all-MiniLM-L6-v2")
 
 Expected: `all-MiniLM-L6-v2` among models.
 
+If empty: confirm image `duncdrum/existdb:experimental` and restart the container.
+
 ---
 
 ### Task 5b: Index-time embedding config
@@ -359,7 +374,7 @@ Store 4 documents (`Hello world`, `Machine learning`, `Quantum physics`, `Climat
 
 ---
 
-### Task 5d: Semantic search
+### Task 5c: Semantic search
 
 ```xquery
 let $query := "artificial neural networks"
@@ -377,7 +392,7 @@ return
 
 ---
 
-### Task 5e: Try different queries
+### Task 5d: Try different queries
 
 | Query | Expected top result |
 |-------|-------------------|
@@ -387,7 +402,7 @@ return
 
 ---
 
-### Task 5f: Batch embedding
+### Task 5e: Batch embedding
 
 ```xquery
 let $batch := vector:embed-batch(

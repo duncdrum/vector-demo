@@ -16,6 +16,8 @@ vector:models()
 
 Expected: `all-MiniLM-L6-v2` (and other models) in the result.
 
+If empty: confirm image `duncdrum/existdb:experimental` and restart the container.
+
 ### Step 2: Embed a query
 
 ```xquery
