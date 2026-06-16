@@ -1,0 +1,49 @@
+site/index.html
+  s_bfc9154464d99f::t_2b03cc0afc693f 26-27
+workshop-slides/w-01-title.md
+  s_bfc9154464d99f::t_b619d4b0192eef 3-4
+  s_bfc9154464d99f::t_14e558a06bafae 21-22
+  s_bfc9154464d99f::t_e6a7c5636b4879 37
+workshop-slides/w-02-tasks.md
+  s_bfc9154464d99f::t_ecccf9ab718b1d 14-15
+  s_bfc9154464d99f::t_f01867a0aa51d9 288-289
+  s_bfc9154464d99f::t_bcc5eeee42f91b 314
+  s_bfc9154464d99f::t_a271284f740269 169
+  s_bfc9154464d99f::t_494453b1ef877d 33-34,39
+  s_bfc9154464d99f::t_fe4e9cfc0d2dbd 332
+  s_bfc9154464d99f::t_ed83db1a8086f5 342
+workshop/task-01-setup.md
+  s_bfc9154464d99f::t_c75c14c7ed7a36 5,7,19-20,38-39,42
+workshop/solutions/solution-01.md
+  s_bfc9154464d99f::t_a47c565e061b1f 3-4
+workshop/task-05-embedding.md
+  s_bfc9154464d99f::t_954c7c1a136b90 19-20
+workshop/README.md
+  s_bfc9154464d99f::t_bac2af2c004044 25-35
+package.json
+  s_bfc9154464d99f::t_2e9d995afd3cb5 7
+.github/workflows/pages.yml
+  s_bfc9154464d99f::t_59d2e4a9ceaea7 27
+scripts/merge-slides.js
+  s_bfc9154464d99f::t_fb135c2bb22325 10,12-15
+README.md
+  s_bfc9154464d99f::t_d0402603a10e33 22-23,26
+  s_bfc9154464d99f::t_33434f22fca143 57
+  s_bfc9154464d99f::t_9c5bda19859265 65
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "99256e48f4a61bcec0e5b30a9eb7b1eaa463480f",
+  "prompts": {},
+  "sessions": {
+    "s_bfc9154464d99f": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "e69f9a39-7d7e-4438-a957-ba3be128fae5",
+        "model": "composer-2.5"
+      },
+      "human_author": "duncdrum <d.paterson@me.com>"
+    }
+  }
+}
