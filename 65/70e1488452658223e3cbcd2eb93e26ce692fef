@@ -1,0 +1,19 @@
+site/style.css
+  s_bfc9154464d99f::t_e55d554cc52938 84,87-95
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.7",
+  "base_commit_sha": "6570e1488452658223e3cbcd2eb93e26ce692fef",
+  "prompts": {},
+  "sessions": {
+    "s_bfc9154464d99f": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "e69f9a39-7d7e-4438-a957-ba3be128fae5",
+        "model": "composer-2.5"
+      },
+      "human_author": "duncdrum <d.paterson@me.com>"
+    }
+  }
+}
