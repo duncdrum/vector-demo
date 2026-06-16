@@ -69,8 +69,6 @@ npx @marp-team/marp-cli@4.1.2 --no-stdin --html --allow-local-files workshop-sli
 
 Pushes to `main` build the static site via [`.github/workflows/pages.yml`](.github/workflows/pages.yml) and deploy to GitHub Pages.
 
-Enable once: repo **Settings → Pages → Source: GitHub Actions**.
-
 ## License
 
 [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE)

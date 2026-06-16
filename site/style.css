@@ -81,9 +81,18 @@ pre {
   border-radius: 6px;
   overflow-x: auto;
   font-size: 0.85rem;
+  line-height: 1.45;
 }
 
-code {
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+  border-radius: 0;
+}
+
+:not(pre) > code {
   background: var(--code-bg);
   padding: 0.1em 0.35em;
   border-radius: 3px;
