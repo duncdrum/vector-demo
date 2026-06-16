@@ -1,0 +1,6 @@
+{
+  "markdown.marp.enableHtml": true,
+  "markdown.marp.exportType": "html",
+  "markdown.marp.pdf.outlines": false,
+  "markdown.marp.themes": []
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semantic Search with eXist-db 7 — Workshop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <p class="event">XML Prague 2026.06.04 eXist-db Users Meetup and Workshop</p>
+    <h1>Semantic Search with eXist-db 7</h1>
+    <p class="subtitle">Hands-on exercises with vector KNN, embedding, and Lucene 10</p>
+
+    <div class="actions">
+      <a class="btn" href="slides/">View slides</a>
+      <a class="btn btn-secondary" href="https://github.com/duncdrum/vector-demo">GitHub repo</a>
+    </div>
+
+    <h2>Quick start</h2>
+    <p><strong>Prerequisites:</strong> Docker and a browser.</p>
+    <p><strong>Image:</strong> <code>duncdrum/existdb:experimental</code></p>
+    <pre><code>docker run -d --name exist-semantic \
+    -p 8080:8080 -p 8443:8443 \
+    duncdrum/existdb:experimental</code></pre>
+    <p>If the name already exists: <code>docker rm -f exist-semantic</code> first.</p>
+    <p>Open <strong>eXide</strong> at <a href="http://localhost:8080/exist/apps/eXide/index.html">http://localhost:8080/exist/apps/eXide/index.html</a>. Save <code>collection.xconf</code> in the collection — eXide syncs it to the system config path on save.</p>
+
+    <h2>Workshop tasks</h2>
+    <p>Run each XQuery in eXide (~40 min total).</p>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Task</th><th>Time</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><a href="https://github.com/duncdrum/vector-demo/blob/main/workshop/task-01-setup.md">Set up a collection with vector index</a></td>
+          <td>5 min</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><a href="https://github.com/duncdrum/vector-demo/blob/main/workshop/task-02-basic-search.md">Basic KNN search</a></td>
+          <td>5 min</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><a href="https://github.com/duncdrum/vector-demo/blob/main/workshop/task-03-similarity.md">Different similarity functions</a></td>
+          <td>5 min</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><a href="https://github.com/duncdrum/vector-demo/blob/main/workshop/task-04-filters.md">Filters and facets</a></td>
+          <td>5 min</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><a href="https://github.com/duncdrum/vector-demo/blob/main/workshop/task-05-embedding.md">Embedding and end-to-end search</a></td>
+          <td>10 min</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><a href="https://github.com/duncdrum/vector-demo/blob/main/workshop/task-06-reindex.md">Reindex lifecycle</a></td>
+          <td>5 min</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><a href="https://github.com/duncdrum/vector-demo/blob/main/workshop/task-07-advanced.md">Advanced edge cases</a></td>
+          <td>5 min</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><a href="https://github.com/duncdrum/vector-demo/tree/main/workshop/solutions">Solutions</a> — full XQuery scripts for each task.</p>
+
+    <h2>Build slides locally</h2>
+    <pre><code>npm install
+npm run build
+npm run slides:preview  # http://127.0.0.1:9080</code></pre>
+
+    <footer>
+      <p>Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+      <a href="https://github.com/duncdrum/vector-demo/blob/main/LICENSE">LICENSE</a></p>
+    </footer>
+  </main>
+</body>
+</html>
